@@ -19,7 +19,8 @@
 			"recommended": true,
 			"correctness": {
 				"noUnusedVariables": "off",
-				"noUnusedFunctionParameters": "off"
+				"noUnusedFunctionParameters": "off",
+				"noUnusedPrivateClassMembers": "off"
 			}
 		}
 	},
