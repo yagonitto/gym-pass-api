@@ -1,5 +1,5 @@
 import type { FastifyReply, FastifyRequest } from 'fastify'
-import { ZodError, flattenError } from 'zod'
+import { flattenError, ZodError } from 'zod'
 import { env } from '@/env'
 
 export function errorHandler(
@@ -9,7 +9,7 @@ export function errorHandler(
 ) {
   if (error instanceof ZodError) {
     return reply.status(400).send({
-      message: 'validation error',
+      message: 'Validation error',
       issues: flattenError(error).fieldErrors,
     })
   }
@@ -21,6 +21,6 @@ export function errorHandler(
   }
 
   return reply.status(500).send({
-    message: 'internal server error',
+    message: 'Internal server error',
   })
 }
